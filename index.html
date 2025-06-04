@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de IA Aplicada al Derecho Privado</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #0ea5e9;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 auto;
+        }
+        
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+        
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .module-content {
+            padding: 1.5rem;
+        }
+        
+        .module-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .module-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .status-available {
+            background-color: #ecfdf5;
+            color: var(--success);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            margin-bottom: 1.5rem;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .module-summary {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            display: none;
+        }
+        
+        .next-steps {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .next-steps h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        
+        .next-steps li:last-child {
+            border-bottom: none;
+        }
+        
+        .next-steps li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-top: 0.1rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .module-content h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <span class="logo-icon">⚖️</span>
+            <span>Taller de IA Aplicada al Derecho Privado</span>
+        </div>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>Inteligencia Artificial Para Productividad Legal</h1>
+        <p>Aprende a utilizar herramientas de IA para optimizar tu práctica en derecho privado y mejorar tu eficiencia profesional.</p>
+    </div>
+</div>
+
+<main class="container">
+    <section id="module-section">
+        <h2 class="section-title">Sesión 1</h2>
+        
+        <!-- Tarjeta del módulo unificada con video y contenido -->
+        <div class="module-card" style="padding-bottom: 1.5rem;">
+            <div class="module-content">
+                <span class="module-status status-available">Disponible</span>
+                <h3>Introducción a la IA en la Práctica Legal</h3>
+                <p>Fundamentos de los modelos de lenguaje grandes (LLM) y su aplicación práctica en el sector legal para mejorar la productividad y calidad del trabajo jurídico.</p>
+            </div>
+            
+            <div class="video-container" style="margin: 1.5rem;">
+                <iframe id="vimeo-player" style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://player.vimeo.com/video/1090531381" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <button id="summary-toggle" class="btn btn-outline" style="margin-top: 1.5rem; display: block; margin-left: auto; margin-right: auto; width: 200px;">Ver Resumen</button>
+            
+            <div id="summary-content" class="module-summary">
+                <h4>Resumen de la Sesión 1: Introducción a la IA en Derecho Privado</h4>
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Nelson y Joe presentaron un curso integral sobre la aplicación de la inteligencia artificial en la productividad laboral, específicamente enfocado en el sector legal. La sesión destacó la importancia fundamental de desarrollar habilidades de comunicación efectiva, gestión emocional y adaptabilidad al trabajar con herramientas de IA, tratándolas como asistentes calificados que requieren dirección clara y retroalimentación constante.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Los instructores explicaron en detalle los modelos de lenguaje grandes (LLM), enfatizando que existen aproximadamente 12 modelos principales en el mundo debido a su alto costo de entrenamiento. Estos modelos han sido entrenados con billones de datos, equivalente a leer y analizar 40 millones de libros, y tienen acceso a información en tiempo real de internet. Se describió la evolución de la IA a través de cinco niveles: chatbots conversacionales, razonadores, agentes, innovadores y organizaciones, ubicándose actualmente en la etapa de agentes.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">La sesión incluyó demostraciones prácticas sobre cómo utilizar diferentes modelos de lenguaje (ChatGPT, Claude, Grok y Gemini) para tareas legales específicas, como la constitución de sociedades anónimas cerradas en Perú. Los participantes aprendieron a formular instrucciones efectivas (prompts), adjuntar archivos y aprovechar las capacidades avanzadas de cada plataforma, incluyendo el uso de proyectos para organizar información y mantener historiales de conversaciones especializadas.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Se enfatizó la importancia del aprendizaje autodirigido y la experimentación constante, destacando que no es necesario entender completamente el funcionamiento técnico de la IA para utilizarla efectivamente. Los instructores promovieron una mentalidad de adaptabilidad, explicando que la clave del éxito radica en desarrollar la actitud correcta para adaptarse a los cambios tecnológicos constantes y aplicar la "regla de 2x" - repetir las solicitudes al menos dos veces para obtener mejores resultados.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">La sesión concluyó con ejemplos específicos del ámbito legal, donde Joe demostró el uso de un proyecto de asistente de Derecho societario que utiliza la ley y el reglamento de sociedades para responder consultas específicas. Se discutió el potencial de estas herramientas para realizar due diligence rápidamente, analizar contratos de financiamiento e identificar cláusulas relevantes, estableciendo las bases para profundizar en buenas prácticas de prompting y aplicaciones específicas en derecho privado en sesiones futuras.</p>
+            </div>
+        </div>
+        
+        <!-- Próximos pasos -->
+        <div class="next-steps">
+            <h3>Próximos Pasos</h3>
+            <ul>
+                <li>Ver la grabación de la clase al menos una vez más para reforzar el aprendizaje</li>
+                <li>Crear cuentas gratuitas en ChatGPT, Claude, Grok y Gemini</li>
+                <li>Practicar el uso de la inteligencia artificial en tareas diarias, empezando con pequeños experimentos</li>
+                <li>Desarrollar la habilidad de comunicación efectiva con la IA, tratándola como un asistente calificado</li>
+                <li>Gestionar las emociones y la frustración al usar la IA, manteniendo una actitud de aprendizaje continuo</li>
+                <li>Aplicar la "regla de 2x" al usar la IA, repitiendo las solicitudes al menos dos veces para obtener mejores resultados</li>
+                <li>Experimentar con diferentes modelos de lenguaje para determinar cuál es más útil para necesidades específicas</li>
+                <li>Considerar adquirir al menos un plan pagado de un modelo de lenguaje (preferiblemente ChatGPT) para acceder a capacidades más avanzadas</li>
+                <li>Familiarizarse con las funciones de razonamiento avanzado en los diferentes modelos</li>
+                <li>Explorar el uso de modelos de lenguaje para tareas específicas relacionadas con la práctica legal</li>
+                <li>Identificar 3 nuevos usos potenciales de los modelos de lenguaje para gestión legal</li>
+                <li>Compartir dudas específicas para abordar en la próxima sesión sobre buenas prácticas de prompting</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <h4>Taller de IA Aplicada al Derecho Privado</h4>
+            <p>Optimizando la práctica legal con inteligencia artificial</p>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Taller de IA Aplicada al Derecho Privado. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Función para mostrar/ocultar el resumen
+document.addEventListener('DOMContentLoaded', function() {
+    const summaryToggle = document.getElementById('summary-toggle');
+    const summaryContent = document.getElementById('summary-content');
+    
+    summaryToggle.addEventListener('click', function() {
+        if (summaryContent.style.display === 'none' || summaryContent.style.display === '') {
+            summaryContent.style.display = 'block';
+            summaryToggle.textContent = 'Ocultar Resumen';
+        } else {
+            summaryContent.style.display = 'none';
+            summaryToggle.textContent = 'Ver Resumen';
+        }
+    });
+});
+</script>
+</body>
+</html>
