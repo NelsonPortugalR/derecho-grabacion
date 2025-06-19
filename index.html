@@ -319,9 +319,9 @@
             </div>
         </div>
         
-        <!-- Próximos pasos -->
+        <!-- Próximos pasos Sesión 1 -->
         <div class="next-steps">
-            <h3>Próximos Pasos</h3>
+            <h3>Próximos Pasos - Sesión 1</h3>
             <ul>
                 <li>Ver la grabación de la clase al menos una vez más para reforzar el aprendizaje</li>
                 <li>Crear cuentas gratuitas en ChatGPT, Claude, Grok y Gemini</li>
@@ -335,6 +335,55 @@
                 <li>Explorar el uso de modelos de lenguaje para tareas específicas relacionadas con la práctica legal</li>
                 <li>Identificar 3 nuevos usos potenciales de los modelos de lenguaje para gestión legal</li>
                 <li>Compartir dudas específicas para abordar en la próxima sesión sobre buenas prácticas de prompting</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Sesión 2</h2>
+        
+        <!-- Tarjeta de la Sesión 2 -->
+        <div class="module-card" style="padding-bottom: 1.5rem;">
+            <div class="module-content">
+                <span class="module-status status-available">Disponible</span>
+                <h3>Técnicas Avanzadas de Prompting y Aplicaciones Prácticas</h3>
+                <p>Profundización en técnicas de prompting efectivo, creación de propuestas legales con IA y estrategias para maximizar la productividad en tareas jurídicas específicas.</p>
+            </div>
+            
+            <div class="video-container" style="margin: 1.5rem;">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://player.vimeo.com/video/1094570728" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <button id="summary-toggle-2" class="btn btn-outline" style="margin-top: 1.5rem; display: block; margin-left: auto; margin-right: auto; width: 200px;">Ver Resumen</button>
+            
+            <div id="summary-content-2" class="module-summary">
+                <h4>Resumen de la Sesión 2: Técnicas Avanzadas de Prompting</h4>
+                <p style="margin-bottom: 1rem; line-height: 1.6;">El equipo discutió sus experiencias con la inteligencia artificial, centrándose en ChatGPT y Gemini, y su potencial para mejorar la productividad y la eficiencia en tareas como la redacción de documentos y la generación de resúmenes. También exploraron el uso estratégico de modelos de lenguaje para resolver problemas, mejorar el crecimiento profesional y crear propuestas de servicios legales utilizando inteligencia artificial.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Joe enfatizó la importancia de proporcionar datos precisos a la inteligencia para obtener resultados más precisos, recomendando que los miembros del equipo traten su uso de la inteligencia como un proyecto, recopilando información y subiéndola regularmente. Nelson discutió la importancia de la comunicación efectiva con la inteligencia, enfatizando que la calidad de la solicitud o pedido puede marcar la diferencia en la eficiencia de la inteligencia.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Nelson explicó los diferentes usos de los modelos de lenguaje, destacando la importancia de proporcionar instrucciones específicas (prompts) para obtener resultados deseados. Describió dos enfoques principales: uno estratégico para obtener ideas y soluciones a problemas abiertos, y otro más específico para tareas concretas que requieren instrucciones detalladas.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">Joe presentó una metodología práctica para crear propuestas de servicios jurídicos utilizando inteligencia artificial, demostrando cómo generar y refinar propuestas para la constitución de una sociedad anónima cerrada en Perú, incluyendo detalles sobre honorarios, servicios y cláusulas específicas. También mostró cómo utilizar la IA para mejorar cláusulas individuales y crear prompts más elaborados.</p>
+                
+                <p style="margin-bottom: 1rem; line-height: 1.6;">La sesión concluyó con discusiones sobre la importancia de proporcionar instrucciones específicas, verificar los resultados y utilizar eficazmente las herramientas de inteligencia artificial para crear propuestas y correos electrónicos, enfatizando siempre la necesidad de revisar y corregir el output generado por la IA antes de utilizarlo en contextos profesionales.</p>
+            </div>
+        </div>
+        
+        <!-- Próximos pasos para Sesión 2 -->
+        <div class="next-steps">
+            <h3>Próximos Pasos - Sesión 2</h3>
+            <ul>
+                <li>Practicar la construcción de prompts efectivos para obtener mejores resultados de la IA</li>
+                <li>Utilizar la aplicación de IA en el celular durante tiempos libres para practicar y aprender</li>
+                <li>Al usar la IA para resúmenes o análisis de documentos legales, proporcionar contexto específico sobre la normativa vigente y fechas relevantes</li>
+                <li>Crear un "proyecto personal" en la IA (ej. "Proyecto Angie", "Proyecto Ayrton") para que la herramienta aprenda más sobre cada usuario</li>
+                <li>Al solicitar publicaciones para redes sociales, especificar la plataforma (ej. "para LinkedIn") para obtener un formato más adecuado</li>
+                <li>Manejar las expectativas y emociones al interactuar con la IA, entendiendo que la calidad de los resultados depende de la calidad de las instrucciones</li>
+                <li>Crear un inventario o bitácora de prompts específicos para las tareas más frecuentes en su práctica legal</li>
+                <li>Practicar el uso de prompts con diferentes elementos (rol, pedido, información, formato, contexto, audiencia, ejemplos y validación)</li>
+                <li>Experimentar con el uso de la inteligencia artificial para revisión ortográfica, de estilo y coherencia en documentos legales</li>
+                <li>Probar la función de traducción de la IA para comunicaciones en inglés, especialmente en situaciones urgentes</li>
+                <li>Utilizar la función de transcripción de la IA para agilizar la transcripción de documentos legales como poderes, partidas registrales y cláusulas</li>
+                <li>Implementar la práctica de revisar y corregir siempre el output generado por la IA antes de utilizarlo en contextos profesionales</li>
             </ul>
         </div>
     </section>
@@ -365,6 +414,20 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             summaryContent.style.display = 'none';
             summaryToggle.textContent = 'Ver Resumen';
+        }
+    });
+    
+    // Función para la Sesión 2
+    const summaryToggle2 = document.getElementById('summary-toggle-2');
+    const summaryContent2 = document.getElementById('summary-content-2');
+    
+    summaryToggle2.addEventListener('click', function() {
+        if (summaryContent2.style.display === 'none' || summaryContent2.style.display === '') {
+            summaryContent2.style.display = 'block';
+            summaryToggle2.textContent = 'Ocultar Resumen';
+        } else {
+            summaryContent2.style.display = 'none';
+            summaryToggle2.textContent = 'Ver Resumen';
         }
     });
 });
