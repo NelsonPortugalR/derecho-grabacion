@@ -386,6 +386,53 @@
                 <li>Implementar la práctica de revisar y corregir siempre el output generado por la IA antes de utilizarlo en contextos profesionales</li>
             </ul>
         </div>
+<h2 class="section-title">Sesión 3</h2>
+
+<h2 class="section-title">Sesión 3</h2>
+
+<div class="module-card" style="padding-bottom: 1.5rem;">
+    <div class="module-content">
+        <span class="module-status status-available">Disponible</span>
+        <h3>Automatización y Herramientas Avanzadas para la Práctica Legal</h3>
+        <p>Uso de herramientas de inteligencia artificial y automatización para mejorar la eficiencia en tareas legales, redacción de documentos, creación de presentaciones y visualización de datos.</p>
+    </div>
+    
+    <div class="video-container" style="margin: 1.5rem;">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://player.vimeo.com/video/1097220276" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <button id="summary-toggle-3" class="btn btn-outline" style="margin-top: 1.5rem; display: block; margin-left: auto; margin-right: auto; width: 200px;">Ver Resumen</button>
+    
+    <div id="summary-content-3" class="module-summary">
+        <h4>Resumen de la Sesión 3: Automatización y Herramientas Avanzadas</h4>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">La reunión abordó el uso de herramientas de inteligencia artificial y automatización para mejorar la eficiencia en tareas legales y de comunicación. Se discutieron aplicaciones específicas como ChatGPT, Copilot y Gamma para la redacción de documentos, creación de presentaciones y visualización de datos. El equipo exploró cómo estas tecnologías pueden optimizar procesos repetitivos, mejorar la productividad y ampliar las capacidades profesionales en el ámbito jurídico.</p>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">El equipo se reunió para discutir el progreso en el uso de herramientas de IA, incluyendo la proyección de planes laborales, resúmenes de contratos y promociones en LinkedIn. Jorge compartió su experiencia intentando utilizar ChatGPT para obtener información de expedientes judiciales, encontrando algunas limitaciones, mientras que Nelson explicó que la IA puede tener dificultades con sistemas que requieren autenticación, sugiriendo que la automatización podría ser una solución.</p>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">Joe explicó cómo utilizar herramientas de inteligencia artificial como ChatGPT y Copilot para mejorar la redacción y traducción de correos electrónicos, destacando la importancia de revisar cuidadosamente el contenido generado por IA. También demostró cómo crear cartas de resolución de contrato y generar informes jurídicos sobre sociedades irregulares basándose en la Ley General de Sociedades del Perú.</p>
+        
+        <p style="margin-bottom: 1rem; line-height: 1.6;">Nelson presentó herramientas como Gamma para crear presentaciones a partir de texto y explicó cómo utilizar herramientas de IA para crear gráficos, visualizaciones y presentaciones de manera eficiente. También discutió la automatización de tareas repetitivas utilizando herramientas como Zapier y Power Automate, enfatizando la importancia de explorar estas herramientas para mejorar la eficiencia y liberar tiempo en la práctica legal.</p>
+    </div>
+</div>
+
+<!-- Próximos pasos para Sesión 3 -->
+<div class="next-steps">
+    <h3>Próximos Pasos - Sesión 3</h3>
+    <ul>
+        <li>Jorge: Investigar y probar la posibilidad de automatizar la consulta de expedientes judiciales utilizando ChatGPT o herramientas similares.</li>
+        <li>Nelson: Explorar la viabilidad de acceder a la página del poder judicial y extraer información de expedientes utilizando herramientas de automatización.</li>
+        <li>Todos: Continuar practicando y explorando el uso de ChatGPT y Copilot para mejorar la redacción de correos electrónicos, cartas y documentos legales.</li>
+        <li>Todos: Experimentar con el uso de ChatGPT para generar y refinar informes legales sobre temas específicos.</li>
+        <li>Ayrton: Compartir con el grupo el GPT especializado en derecho, leyes y contratos de Perú que ha estado utilizando.</li>
+        <li>Todos: Investigar y probar el GPT especializado en derecho peruano compartido por Ayrton.</li>
+        <li>Joe: Preparar el contenido para la próxima sesión sobre informes, investigación, contratos y reclamos.</li>
+        <li>Todos los participantes: Explorar las herramientas de automatización como Zapier o Power Automate para sus tareas diarias.</li>
+        <li>Ayrton: Investigar más sobre Power Automate para crear un sistema de seguimiento y cumplimiento normativo.</li>
+        <li>Nelson: Complementar la información sobre automatización en la próxima sesión.</li>
+        <li>Cynthia: Asistir a la próxima sesión del jueves.</li>
+        <li>Todos los participantes: Prepararse para aplicar las herramientas aprendidas en los aspectos de informes, investigación, contratos y reclamos en la próxima sesión.</li>
+    </ul>
+</div> 
     </section>
 </main>
 
@@ -431,6 +478,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Función para la Sesión 3
+const summaryToggle3 = document.getElementById('summary-toggle-3');
+const summaryContent3 = document.getElementById('summary-content-3');
+
+summaryToggle3.addEventListener('click', function() {
+    if (summaryContent3.style.display === 'none' || summaryContent3.style.display === '') {
+        summaryContent3.style.display = 'block';
+        summaryToggle3.textContent = 'Ocultar Resumen';
+    } else {
+        summaryContent3.style.display = 'none';
+        summaryToggle3.textContent = 'Ver Resumen';
+    }
+});    
 </script>
 </body>
 </html>
